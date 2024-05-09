@@ -1,61 +1,52 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Work Orders</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
-  <div class="container text-center mb-5">
-    <h1  >Work Orders</h1>
-    <br>
-    <a class="btn btn-primary" href="/workorders/create">Create Work Orders 
-    </a>
-    <br>
-    <a class="btn btn-primary m-3" href="/workorders/search">Search 
-    </a>
-     
-    <!-- <table class="table">
-    <thead>
-    <tr>
-    <th>ID</th>
-    <th>WorkOrderID</th>
-    <th>RD</th>
-    <th>Material</th>
-    <th>PressureRange</th>
-    <th>MaterialThickness</th>
-    <th>BulgeLoad</th>
-    <th>BulgePressure</th>
-    <th>BurstPressue</th>
-    <th>MillDepth</th>
-    <th>TopRing</th>
-    <th>CreatedOn</th>
-    <th>CreatedBy</th>
-    <th>Remarks</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="orderDetail : ${orderDetails}">
-    <td th:text="${orderDetail.id}"></td>
-    <td th:text="${orderDetail.workOrderId}"></td>
-    <td th:text="${orderDetail.rd}"></td>
-    <td th:text="${orderDetail.material}"></td>
-    <td th:text="${orderDetail.pressureRange}"></td>
-    <td th:text="${orderDetail.materialThickness}"></td>
-    <td th:text="${orderDetail.bulgeLoad}"></td>
-    <td th:text="${orderDetail.bulgePressure}"></td>
-    <td th:text="${orderDetail.burstPressure}"></td>
-    <td th:text="${orderDetail.millDepth}"></td>
-    <td th:text="${orderDetail.topRing}"></td>
-    <td th:text="${orderDetail.createdOn.toString().substring(0,10)}"></td>
-    <td th:text="${orderDetail.createdBy}"></td>
-    <td th:text="${orderDetail.remarks}"></td>  
-    </tr>
-    
-    </tbody>
-    </table>  -->
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Ventil Solutions Pvt. Ltd.</title>
+  <link rel="stylesheet" href="main.css"">
+</head>
+
+<body>
+
+      <div id="contact-form" align="center">
+          <div align="center">
+             <table>
+                <tr>
+               <td width="30%" align="top">
+                  <img src="images/ventil_logo.png"  width="150" height="100">
+               </td>
+               <td  width="70%">
+                    <h2>Work Orders</h2>
+               </td>
+             </tr>
+             </table>
+          </div>
+  <div align="center">
+    <h4>_________________________________________________</h4>
+         <p></p>
+
+  </div>
+           <p></p> 
+
+      <div>
+            <p></p>
+          <a href="/workorders/create"> <button>Create Work Order</button></a>
+           <p></p>
+      </div>
+      <div>
+           <p></p>
+          <a href="/workorders/search"><button>Search Work Order</button></a>
+            <p></p>
+      </div>
+      <div>
+      <p></p>
+          <a href="/workorders/admin"><button width="100%">Administration</button></a>
+          <p></p>
+      </div>
+
+
+  </div>
+</body>
+
 </html>

@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Ventil Solutions Pvt. Ltd.</title>
+  <link rel="stylesheet" href="main.css"">
+</head>
+
+<body>
+
+      <div id="contact-form" align="center">
+          <div align="center">
+             <table>
+                <tr>
+               <td width="30%" align="top">
+                  <img src="images/ventil_logo.png"  width="150" height="100">
+               </td>
+               <td  width="70%">
+                    <h2>Work Order Entry Form</h2>
+               </td>
+             </tr>
+             </table>
+          </div>
+  <div align="center">
+    <h4>_________________________________________________</h4>
+
+
+  </div>
+      <div th:if="${resultMessage != null}">
+		<p
+		th:style="${status == 'success' ? 'color: green;' : 'color: red;'}"
+
+		th:text="${resultMessage}" ></p>
+	</div>
+       <form method="post" th:object="${orderDetailDto}">
+
+       <table>
+           <tr>
+               <td width="40%" align="top">
+                <label>
+                    <span class="required">Work Order Id *</span>
+                </label>
+               </td>
+               <td  width="60%">
+                    <input th:field="${orderDetailDto.workOrderId}" placeholder="Enter Work Order"  tabindex="1" autofocus="autofocus">
+                    <p th:if="${#fields.hasErrors('workOrderId')}" th:errorclass="text-danger"th:errors="${orderDetailDto.workOrderId}"></p>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                    <label>
+                        <span class="required">RD Size *</span>
+                    </label>
+               </td>
+               <td>
+      <input th:field="${orderDetailDto.rd}"  placeholder="Enter RD Size"  tabindex="2">
+                    <label>
+                        <span class="required"> IN</span>
+                    </label>
+    <p th:if="${#fields.hasErrors('rd')}" th:errorclass="text-danger"th:errors="${orderDetailDto.rd}"></p>
+                 </td>
+           </tr>
+           <tr>
+               <td>
+                    <label>
+                        <span class="required">Material *</span>
+                    </label>
+               </td>
+               <td>
+                   <input th:field="${orderDetailDto.material}" placeholder="Enter Material" tabindex="3">
+    <p th:if="${#fields.hasErrors('material')}" th:errorclass="text-danger"th:errors="${orderDetailDto.material}"></p>
+               </td>
+           </tr>
+                                  <tr>
+               <td>
+                    <label>
+                        <span class="required">Burst Pressure *</span>
+                    </label>
+               </td>
+               <td>
+                      <input type="number" step="0.01" th:field="${orderDetailDto.burstPressure}" placeholder="Enter Burst Pressure"  tabindex="4">
+    <p th:if="${#fields.hasErrors('burstPressure')}" th:errorclass="text-danger"th:errors="${orderDetailDto.burstPressure}"></p>
+               </td>
+           </tr>
+            <tr>
+               <td>
+                    <label>
+                        <span class="required">Min Pressure Range *</span>
+                    </label>
+               </td>
+               <td>
+                        <input th:field="${orderDetailDto.pressureRange}"  placeholder="Enter Min Pressure Range" tabindex=""5>
+    <p th:if="${#fields.hasErrors('pressureRange')}" th:errorclass="text-danger"th:errors="${orderDetailDto.pressureRange}"></p>
+               </td>
+           </tr>
+
+            <tr>
+               <td>
+                    <label>
+                        <span class="required">Max Pressure Range *</span>
+                    </label>
+               </td>
+               <td>
+                        <input th:field="${orderDetailDto.pressureRangeMax}"  placeholder="Enter Max Pressure Range" tabindex="6">
+    <p th:if="${#fields.hasErrors('pressureRangeMax')}" th:errorclass="text-danger"th:errors="${orderDetailDto.pressureRangeMax}"></p>
+               </td>
+           </tr>
+                       <tr>
+               <td>
+                    <label>
+                        <span class="required">Material Thickness *</span>
+                    </label>
+               </td>
+               <td>
+                    <input type="number" step="0.01" th:field="${orderDetailDto.materialThickness}" placeholder="Enter Material Thickness"  tabindex="7">
+                    <label>
+                        <span class="required"> Micron</span>
+                    </label>
+    <p th:if="${#fields.hasErrors('materialThickness')}" th:errorclass="text-danger"th:errors="${orderDetailDto.materialThickness}"></p>
+
+               </td>
+           </tr>
+            <tr>
+               <td>
+                    <label>
+                        <span class="required">Material MTC No. *</span>
+                    </label>
+               </td>
+               <td>
+                    <input type="number" step="0.01" th:field="${orderDetailDto.materialMTC}" placeholder="Enter Material MTC No."  tabindex="8">
+    <p th:if="${#fields.hasErrors('materialMTC')}" th:errorclass="text-danger"th:errors="${orderDetailDto.materialMTC}"></p>
+
+               </td>
+           </tr>
+                       <tr>
+               <td>
+                    <label>
+                        <span class="required">Bulge Load *</span>
+                    </label>
+               </td>
+               <td>
+                       <input type="number" step="0.01" th:field="${orderDetailDto.bulgeLoad}"  placeholder="Enter Bulge Load" tabindex="9">
+    <label>
+                        <span class="required"> N</span>
+                    </label>
+    <p th:if="${#fields.hasErrors('bulgeLoad')}" th:errorclass="text-danger"th:errors="${orderDetailDto.bulgeLoad}"></p>
+               </td>
+           </tr>
+                       <tr>
+               <td>
+                    <label>
+                        <span class="required">Bulge Pressure *</span>
+                    </label>
+               </td>
+               <td>
+                    <input type="number" step="0.01" th:field="${orderDetailDto.bulgePressure}" placeholder="Enter Bulge Pressure"  tabindex="10">
+                   <label>
+                        <span class="required"> Psi</span>
+                    </label>
+   <p th:if="${#fields.hasErrors('bulgePressure')}" th:errorclass="text-danger"th:errors="${orderDetailDto.bulgePressure}"></p>
+               </td>
+           </tr>
+
+
+                       <tr>
+               <td>
+                    <label>
+                        <span class="required">Top Ring *</span>
+                    </label>
+               </td>
+               <td>
+                   <input type="number" step="0.01" th:field="${orderDetailDto.topRing}"  placeholder="Enter Top Ring"  tabindex="11">
+    <p th:if="${#fields.hasErrors('topRing')}" th:errorclass="text-danger"th:errors="${orderDetailDto.topRing}"></p>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                    <label>
+                        <span class="required">Top Ring Thickness *</span>
+                    </label>
+               </td>
+               <td>
+                   <input type="number" step="0.01" th:field="${orderDetailDto.topRingThk}"  placeholder="Enter Top Ring Thickness"  tabindex="12">
+    <label>
+                        <span class="required"> MM</span>
+                    </label>
+    <p th:if="${#fields.hasErrors('topRingThk')}" th:errorclass="text-danger"th:errors="${orderDetailDto.topRingThk}"></p>
+               </td>
+           </tr>
+            <tr>
+               <td>
+                    <label>
+                        <span class="required">Operation *</span>
+                    </label>
+               </td>
+               <td>
+                       <select id="subject" name="subject" tabindex="13">
+               <option value="milling">Milling</option>
+               <option value="laserablition">Laser Ablition</option>
+            </select>
+               </td>
+           </tr>
+            <tr>
+               <td>
+                    <label>
+                        <span class="required">Mill Depth *</span>
+                    </label>
+               </td>
+               <td>
+                        <input type="number" step="0.01" th:field="${orderDetailDto.millDepth}" placeholder="Enter Mill Depth"  tabindex="14">
+    <p th:if="${#fields.hasErrors('millDepth')}" th:errorclass="text-danger"th:errors="${orderDetailDto.millDepth}"></p>
+
+               </td>
+           </tr>
+             <tr>
+               <td>
+                    <label>
+                        <span class="required">Laser Ablition *</span>
+                    </label>
+               </td>
+               <td>
+                        <input type="number" step="0.01" th:field="${orderDetailDto.laserAblition}" placeholder="Enter Laser Ablition"  tabindex="15">
+    <p th:if="${#fields.hasErrors('laserAblition')}" th:errorclass="text-danger"th:errors="${orderDetailDto.laserAblition}"></p>
+
+               </td>
+           </tr>
+    </table>
+      <div>
+          <button type="submit">Save</button>
+          <a href="/workorders/create"> <button>Reset</button></a>
+          <a href="/workorders/search"><button>Search</button></a>
+          <a href="/workorders"><button>Back</button></a>
+      </div>
+       </form>
+
+  </div>
+</body>
+
+</html>
